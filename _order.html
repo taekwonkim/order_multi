@@ -1,0 +1,526 @@
+<!-- goods_cart_test -->
+<!-- pdf 3p 1st -->
+<style>
+    .area_rBoxNp{border:1px solid #d9d9d9; background:#fff; margin-top:10px; border-radius: 10px;}
+    .p610 {padding: 6px 10px !important;}
+    .area_rBoxNp .bdb {border-bottom:1px solid #d9d9d9;}
+    .area_rBoxNp .boxTit {padding: 12px 15px;}
+    .area_rBoxNp .boxCon {padding: 10px 0;}
+    .area_rBoxNp .boxCon label {font-size: 12px; line-height: 1.7;}
+    .cart_btn_box .order_multi {background-color: #fff; font-size: 14px; border: solid 1px #d3d1d7; color: #252525;}
+    .cart_btn_box .order_one {background-color: #275c5f; font-size: 14px;}
+</style>
+<div class="chkDelBox area_rBoxNp" style="display: block;">
+    <div class="bdb boxTit">
+        <p>주문 유형 선택</p>
+    </div>
+    <div class="boxCon">
+        <label class="rd_label txt rd_delType p610" for="select_type_r">
+            <input type="radio" name="chkDelType" value="r" id="select_type_r" onclick="radioDelChk(this,'88')">
+            <span></span>
+            일반 상품만 주문합니다.
+        </label>
+        <label class="rd_label txt rd_delType on p610" for="select_type_e">
+            <input type="radio" name="chkDelType" value="e" id="select_type_e" onclick="radioDelChk(this,'1')" checked="checked">
+            <span></span>
+            설 상품만 주문합니다.
+        </label>
+    </div>
+</div>
+<!-- // pdf 3p 1st -->
+
+<!-- pdf 3p 2nd -->
+<div class="cart_btn_box">
+    <button type="button" class="btn_cart order_multi" onclick="openReservationNew('multi');">여러 배송지로 보내기</button>
+    <button type="button" class="btn_cart order_one">하나의 배송지로 보내기</button>
+</div>
+<!-- // pdf 3p 2nd -->
+
+<!-- pdf 4p 2nd datepicker -->
+<style>
+    .popup_delivery_seting .set_order_step {margin: 25px 0 7px 0;}
+    .layer_window .top_tit {font-size: 15px;}
+    #select_calendar_inBox .ui-datepicker {border-radius: 12px; border-top: 1px solid #d9d9d9; box-sizing: border-box; padding: 20px 10px;}
+    .popup_delivery_seting .set_order_step {background: none;}
+    #select_calendar_inBox .ui-datepicker table td {border: 0px none;}
+    #select_calendar_inBox .ui-datepicker table .ui-state-disabled {background: none;}
+    .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {background: none;}
+    #select_calendar_inBox .ui-datepicker table td a.ui-state-active {color: #fff; border: 0px none; background-color: #275c5f; border-radius: 19px; width: 38px; height: 38px; margin: 0 auto;}
+    #select_calendar_inBox .ui-datepicker-header {border: 0px none; border-radius: 12px;}
+    #select_calendar_inBox .ui-datepicker table thead {border-bottom: 1px solid #e7e7e7;}
+    .ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {display: none;}
+    #select_calendar_inBox .ui-datepicker-title {text-align: left; font-size: 24px; font-family: NanumSquareRoundEB;}
+    #select_calendar_inBox .ui-datepicker table th.ui-datepicker-week-end:first-child {color: #fa2828;}
+    #select_calendar_inBox .ui-datepicker table th.ui-datepicker-week-end:last-child {color: #888888;}
+    #select_calendar_inBox .ui-datepicker table td a {color: #326f6d; border: 1px solid rgba(50, 111, 109, 0.2);; border-radius: 19px; width: 38px; height: 38px; margin: 0 auto;}
+    .popup_delivery_seting .btn_ord_comp {background-color: #275c5f; border-radius: 23px;}
+    .popup_delivery_seting .order_box_tit {background: none}
+    .popup_delivery_seting .order_box_tit2 {border: 0px none; font-size: 16px; color: #686868; height: 28px; line-height: 28px; padding: 0;}
+    .popup_delivery_seting .order_box_tit2::before {display: none;}
+    .popup_delivery_seting .odrer_info {border: 0px none; padding: 0;}
+    .popup_delivery_seting .odrer_info th {border: 0px none; padding: 14px 0 8px 0; font-size: 13px; color: #686868;}
+    .popup_delivery_seting .odrer_info td {padding: 0; font-size: 11px; color: #858585;}
+    .popup_delivery_seting .odrer_info p {margin-bottom: 1px; padding-left: 8px;}
+    .popup_delivery_seting .odrer_info p::before {content: "· "; margin-left: -8px;}
+</style>
+<script>
+	$.datepicker.regional['ko'] = {
+		setDate : new Date(),
+		closeText: '닫기',
+		prevText: '이전달',
+		nextText: '다음달',
+		currentText: '오늘',
+		monthNames: ['.01','.02','.03','.04','.05','.06', '.07','.08','.09','.10','.11','.12'],
+		monthNamesShort: ['.01','.02','.03','.04','.05','.06', '.07','.08','.09','.10','.11','.12'],
+		dayNames: ['S','M','T','W','T','F','S'],
+		dayNamesShort: ['S','M','T','W','T','F','S'],
+		dayNamesMin: ['S','M','T','W','T','F','S'],
+		weekHeader: 'Wk',
+		dateFormat: 'yy-mm-dd',
+		firstDay: 0,
+		isRTL: false,
+		duration:200,
+		showAnim:'show',
+		showMonthAfterYear: false,
+		//yearSuffix: '년'};
+		yearSuffix: ''
+	};
+</script>
+<!-- // pdf 4p 2nd datepicker -->
+
+<!-- pdf 4p 3rd -->
+<button type="button" class="btn_ord_comp">확인</button>
+<!-- // pdf 4p 3rd -->
+<!-- // goods_cart_test -->
+
+
+<!-- order_kelvin.html -->
+<!-- pdf 5p 1st -->
+<div class="row_con test_rowcon open_payment_set5">
+    <div class="tit">배송시기</div>
+    <a class="open_payment_set" id="disp_deliway">예약배송 / 새벽배송</a>
+</div>
+<div class="row_con test_rowcon open_payment_set10 dawnInfo_title">
+    <span id="dawnSpan">예약된 배송일 도착 예정</span> 
+</div>
+<!-- // pdf 5p 1st -->
+
+<!-- pdf 5p 2nd -->
+<style>
+    .payment_article .row_con.open_payment_set9 .open_payment_set {max-width: 250px;}
+</style>
+<div class="row_con test_rowcon open_payment_set9">
+    <div class="tit">선물메시지</div>
+    <a class="open_payment_set" id="disp_msg_thanksgiving_2018">명절 선물과 함께 감사 메시지를 보내세요</a>
+</div>
+<!-- // pdf 5p 2nd -->
+<!-- // order_kelvin.html -->
+
+
+<!-- fine.html -->
+<!-- pdf 10p ~ 11p -->
+<div class="dim"></div>
+<style>
+.dim {background-color: #000; width: 100%; height: 100vh; position: fixed; left: 0; top: 0; z-index: 1000; opacity: 0.5; }
+.order_section2 .mt30 {margin-top: 30px;}
+.order_section2 .mw100 {max-width: 100% !important;}
+.order_section2 .tal {text-align: left;}
+.order_section2 .tac {text-align: center;}
+.order_section2 .fwb {font-weight: bold;}
+.order_section2 {width: 1024px; position: absolute; background-color: #f5f5f5; top: 0; left: 50%; margin-left: -512px; z-index: 1000; font-family: 'Noto Sans' !important; padding: 40px 32px !important; box-sizing: border-box; letter-spacing: -0.6px;}
+.order_section2 h2, .order_section2 h3 {color: #222; font-family: 'Noto Sans' !important; font-weight: bold;}
+.order_section2 h2 {font-size: 22px;}
+.order_section2 h3 {font-size: 18px;}
+.order_section2 .order_address_info2 {border: 1px solid #d9d9d9; border-radius: 20px; padding: 32px 28px; background-color: #fff; margin-top: 24px;}
+.order_section2 .title_box {display: flex; margin-bottom: 32px; justify-content: space-between; align-items: baseline;}
+.order_section2 #sendday_form h3 {color: #888; font-size: 14px; font-weight: normal;}
+.order_section2 #sendday_form .order_tit em {font-size: 14px; color:#275c5f}
+.order_section2 input {border: solid 1px #d9d9d9; border-radius: 4px; height: 36px !important; width:100% !important; box-sizing: border-box; padding: 0 10px; font-family: 'Noto Sans'; font-size: 12px; outline:0;transition:background 0.4s, border 0.4s;}
+.order_section2 input:focus{border-color:#333;}
+.order_section2 .order_address_info-top_wrap {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.order_section2 .area_input01 {display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 6px;}
+.order_section2 .area_input02 {display: flex; justify-content: space-between;}
+.order_section2 .area_input03 {display: flex; justify-content: space-between; align-items: center; font-size: 14px; margin-bottom: 6px;}
+.order_section2 .area_input02 input {max-width: 188px;}
+.order_section2 .area_input03 input {max-width: 90px;}
+.order_section2 .area_input03 .area_input {display: flex; justify-content: space-between;}
+.order_section2 .area_input01 .area_input, .order_section2 .area_input02 .area_input, .order_section2 .area_input03 .area_input {flex-basis: 284px; width: 284px;}
+.order_section2 .input_add {margin-top: 30px; align-items: start;}
+.order_section2 .input_add input {margin-bottom: 6px;}
+.order_section2 .order_address_info_right {width: 472px;}
+.order_section2 .order_address_info_left {width: 396px;}
+.order_section2 .multiorder_select {border: solid 1px #d9d9d9; border-radius: 6px; font-size: 12px; height: 480px; overflow-y: auto;}
+.order_section2 .cart_list_table {display: flex; text-align: center; padding: 12px 0; border-bottom: 1px solid #f1f1f1; margin: 0 16px; align-items: center;}
+.order_section2 .cart_list_table:first-child {background-color: #f7f8fa; margin: 0; padding: 12px 16px; border-radius: 6px 6px 0 0;}
+.order_section2 .cart_list_table div:nth-of-type(1) {flex-basis: 232px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.order_section2 .cart_list_table div:nth-of-type(2) {flex-grow: 1;}
+.order_section2 .cart_list_table div:nth-of-type(3) {flex-grow: 1;}
+.order_section2 .cart_list_table div:nth-of-type(4) {flex-grow: 1;}
+.order_section2 .order_address_info_right input {width: 46px !important; height: 26px !important;}
+.order_section2 .order_address_info-bottom_wrap {padding-top: 24px; margin-top: 53px; border-top: 1px solid #d9d9d9; font-size: 12px; color: #333; display: flex;}
+.order_section2 .order_address_info-bottom_wrap .caption {margin-bottom: 5px; color: #333;}
+.order_section2 .caption {color: #888888; font-size: 11px;}
+.order_section2 .area_input03 .area_input {display: flex; justify-content: space-between; flex-wrap: wrap;}
+.order_section2 .order_address_info .inst_textarea {padding: 10px; border: 1px solid #d9d9d9; width: 100%; height: 132px; resize: none; box-sizing: border-box; border-radius: 6px; font-family: 'Noto Sans'; font-size: 12px;}
+.order_section2 .btn_search_address {border-radius: 4px; background-color: #555555; color: #fff; height: 36px; font-size: 13px; display: inline-block; vertical-align: top; width: 90px; text-align: center; line-height: 36px;}
+.order_section2 .btn_search_address:hover {color: #fff;}
+.order_section2 .order_address_info-bottom_wrap .regLayer {margin-left: auto;}
+.order_section2 .order_address_info-bottom_wrap .regLayer a {width: 175px; height: 44px; border-radius: 23px; background-color: #275c5f; color: #fff; display: inline-block; text-align: center; line-height: 44px; font-size: 16px; font-weight: bold; margin-left: 3px;}
+.order_section2 .delivery_option_section {height: 260px; border-bottom: 1px solid #d9d9d9; overflow-y: auto; margin-bottom: 22px;}
+.order_section2 .order_deli_table {display: flex; font-size: 12px; text-align: center; padding: 12px 0; line-height: 1.6; align-items: center;}
+.order_section2 .order_deli_table:first-child {background-color: #f7f8fa;}
+.order_section2 .order_deli_table div:nth-of-type(1) {width: 90px;}
+.order_section2 .order_deli_table div:nth-of-type(2) {width: 90px;}
+.order_section2 .order_deli_table div:nth-of-type(3) {width: 90px;}
+.order_section2 .order_deli_table div:nth-of-type(4) {width: 180px;}
+.order_section2 .order_deli_table div:nth-of-type(5) {width: 180px;}
+.order_section2 .order_deli_table div:nth-of-type(6) {width: 74px;}
+.order_section2 .order_deli_table div:nth-of-type(7) {width: 74px;}
+.order_section2 .order_deli_table div:nth-of-type(8) {width: 120px;}
+.order_section2 .order_deli_table .btn {width: 53px; height: 28px; border-radius: 4px; border: solid 1px #dddddd; display: inline-block; line-height: 28px; cursor: pointer;}
+.order_section2 .pay_btn_box .btn_box {position: relative; text-align: center; height: 48px; margin-top: 22px;}
+.order_section2 .pay_btn_box #resettle { display: none; }
+.order_section2 .btn_order_go3 {width: 456px; height: 48px; border-radius: 23px; background-color: #275c5f; display: block; color: #fff; line-height: 48px; font-size: 16px; font-weight: bold; margin: 0 auto;}
+.order_section2 .loading_box{overflow:hidden; z-index:1; opacity: 0; position:absolute; width:456px; height:48px; line-height:48px; font-size:16px; color:#fff; transition:width 0.4s, background 0.4s; border-radius: 23px; font-weight: bold;}
+.order_section2 .loading_box .progessbar{z-index:1; position:absolute; left:-100%; top:0; width:100%; height:100%; background:#275c5f; transition:left 10s;}
+.order_section2 .loading_box.on{opacity:1;width:456px; background:#a9a9a9;}
+.order_section2 .loading_box span{position:relative; z-index:2;}
+.order_section2 .loading_box.on .progessbar{left:0;}
+.order_section2 .btn_close { position: absolute; right: 32px; top: 32px; width: 32px; height: 32px; text-indent: -5000px; }
+.order_section2 .btn_close:before, .order_section2 .btn_close:after { position: absolute; left: 15px; content: ' '; height: 20px; width: 2px; background-color: #333; }
+.order_section2 .btn_close:before { transform: rotate(45deg); }
+.order_section2 .btn_close:after { transform: rotate(-45deg); }
+.order_section2 .order_address_info .btn_box .btn_no {display: none; border: solid 1px #d3d1d7; color: #252525; background-color: #fff;}
+</style>
+<section class="order_section order_section2">
+    <section class="sub_top_section">
+        <h2 class="cate_title"><span>다중배송 정보 입력</span></h2>
+        <button class="btn_close">close</button>
+    </section>
+    <section class="order_address_info order_address_info2">
+        <div class="order_address_info-top_wrap">
+            <div class="order_address_info_left">
+                <div class="title_box">
+                    <h3 class="order_tit">주문 유형 선택</h3>
+                    <div id="sendday_form">
+                        <h3 class="order_tit">배송 예정일 <em>12/11(수)</em></h3>
+                    </div>
+                </div>
+                <div class="area_input01">
+                    <p>받으시는분</p>
+                    <div class="area_input">
+                        <input type="text" name="rc_nameReceiver" id="rc_nameReceiver" value=""><input type="hidden" name="nameReceiver" id="nameReceiver" value="">
+                    </div>
+                </div>
+                <div class="area_input03">
+                    <p>휴대폰</p>
+                    <div class="area_input">
+                        <input type="text" name="rc_mobileReceiver[]" id="rc_mobileReceiver1" value="" maxlength="3">
+                        <input type="text" name="rc_mobileReceiver[]" id="rc_mobileReceiver2" value="" maxlength="4">
+                        <input type="text" name="rc_mobileReceiver[]" id="rc_mobileReceiver3" value="" maxlength="4">
+                        <input type="hidden" name="mobileReceiver[]" id="mobileReceiver1" value="">
+                        <input type="hidden" name="mobileReceiver[]" id="mobileReceiver2" value="">
+                        <input type="hidden" name="mobileReceiver[]" id="mobileReceiver3" value="">
+                    </div>
+                </div>
+                <div class="area_input03">
+                    <p>추가 연락처</p>
+                    <div class="area_input">
+                        <input type="text" name="rc_phoneReceiver[]" id="rc_phoneReceiver1" value="" maxlength="4">
+                        <input type="text" name="rc_phoneReceiver[]" id="rc_phoneReceiver2" value="" maxlength="4">
+                        <input type="text" name="rc_phoneReceiver[]" id="rc_phoneReceiver3" value="" maxlength="4">
+                        <input type="hidden" name="phoneReceiver[]" id="phoneReceiver1" value="">
+                        <input type="hidden" name="phoneReceiver[]" id="phoneReceiver2" value="">
+                        <input type="hidden" name="phoneReceiver[]" id="phoneReceiver3" value="">
+                    </div>
+                </div>
+                <div class="area_input03 input_add">
+                    <p>주소</p>
+                    <div class="area_input">
+                        <input type="text" name="rc_zipcode[]" id="rc_zipcode0" readonly="" value=""><input type="hidden" name="zipcode[]" id="zipcode0" value="">
+                        <input type="text" name="rc_zipcode[]" id="rc_zipcode1" readonly="" value=""><input type="hidden" name="zipcode[]" id="zipcode1" value="">
+                        <a class="btn_search_address btn_set_settle" href="javascript:postsearch();">우편번호 찾기</a>
+                        <input type="text" class="mw100" name="rc_address" id="rc_address" readonly="" value="">
+                        <input type="hidden" name="address" id="address" value="">
+                        <input type="text" class="mw100" name="rc_address_sub" id="rc_address_sub" value="">
+                        <input type="hidden" name="rc_road_address" id="rc_road_address" value="">
+                        <input type="hidden" name="address_sub" id="address_sub" value="">
+                        <input type="hidden" name="road_address" id="road_address" value="">
+                    </div>
+                </div>
+                <div class="area_input01">
+                    <p></p>
+                    <div class="area_input">
+                        <p class="caption">* 주문 후 배송일 수정을 희망하는 경우, 선택하신 배송 2일전까지 고객센터로 연락 부탁드립니다.</p>
+                    </div>
+                </div>
+                <div class="area_input01 input_add">
+                    <p>배송 메시지</p>
+                    <div class="area_input">
+                        <textarea name="rc_memo" id="rc_memo" class="inst_textarea" placeholder="※배송메시지 기재 필수 사항
+1. 선물의 경우 [선물용]이라는 문구 기재
+2. 건물 1층 입구 비밀번호, 배송요청사항 등 구체적인 요청사항"></textarea>
+                        <input type="hidden" name="memo" id="memo" value="">
+                        <input type="hidden" name="admin_delivery_memo" id="admin_delivery_memo">
+                    </div>
+                </div>
+                <div class="area_input01">
+                    <p></p>
+                    <div class="area_input">
+                        <p class="caption">* 꺽쇠 (&lt;,&gt;)는 입력할 수 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order_address_info_right">
+                <div class="title_box">
+                    <h3 class="order_tit">상품 및 주문수량 선택</h3>
+                </div>
+                <div id="cart_list_table" class="multiorder_select">
+                    <div class="cart_list_table">
+                        <div>상품명</div>
+                        <div>구매수량</div>
+                        <div>주문수량</div>
+                        <div>남은수량</div>
+                    </div>
+                    <div class="cart_list_table">
+                        <div><a href="#">[빌더라마] 올리브오일 2종 선물 세트</a></div>
+                        <div>1</div>
+                        <div>
+                            <input type="text" name="eaReceiver[]" id="eaReceiver0" class="tac" value="0" maxlength="3" onkeydown="onlynumber()" onkeyup="strnumkeyup(this,0)">
+                            <input type="hidden" name="goodsnumber[]" id="goodsnumber0" value="25370">
+                            <input type="hidden" name="goodsprice[]" id="goodsprice0" value="33600">
+                            <input type="hidden" name="itemsu[]" id="itemsu0" value="1">
+                            <input type="hidden" name="orieaReceiver[]" id="orieaReceiver0" value="0">
+                        </div>
+                        <div><em id="nsu0">1</em></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order_address_info-bottom_wrap clearfix">
+            <div class="caption_box">
+                <p class="caption">
+                    · 상품을 보내실 첫번째 배송지 및 상품 정보 입력 후 '등록'을 누르시면 두번째 배송정보를 입력하실 수 있습니다.
+                </p>
+                <p class="caption">
+                    · 장바구니 전 상품의 모든 수량이 소진될 때까지 배송정보를 등록해 주셔야 주문 가능합니다.
+                </p>
+            </div>
+            <div class="btn_box regLayer">
+                <a class="btn_no btn_set_norder">취소하기</a><a class="btn_set btn_set_order" id="buttontxt">배송정보등록</a>
+            </div>
+        </div>
+    </section>
+    <section class="order_address_info2">
+        <div class="title_box">
+            <h3 class="order_tit">주문 정보 확인</h3>
+            <div class="fwb">
+                <span id="mOrderCnt">2</span>개의 배송지로 배송됩니다.
+            </div>
+        </div>
+        <div class="delivery_option_section">
+            <div class="order_deli_table">
+                <div>배송일</div>
+                <div>받으시는 분</div>
+                <div>연락처</div>
+                <div>주소</div>
+                <div>상품명</div>
+                <div>수량</div>
+                <div>배송비</div>
+                <div></div>
+            </div>
+            <div class="order_deli_table">
+                <div>2020.01.14</div>
+                <div>홍길동</div>
+                <div>010-000-0000 </div>
+                <div class="tal">[06127] 서울 강남구 봉은사로16길 33, 헬로네이처 3층</div>
+                <div class="tal">상황양지버섯 혼합 선물세트</div>
+                <div>1</div>
+                <div>2,500</div>
+                <div>
+                    <span id="" class="btn btnS2 btnYell2" onclick="multiDeliFunc('P0','','','find');">수정</span>
+                    <span id="" class="btn btnS2 btnGre2" onclick="multiDeliFunc('P0','','','delete');">삭제</span>
+                </div>
+            </div>
+        </div>
+        <p class="caption"> * 다중배송시 주문액 4만원 이하의 주소지 당 별도 배송비(2,500원) 부과됩니다. </p>
+    </section>
+    <section class="pay_btn_box">
+        <div class="btn_box">
+            <a class="btn_order_go3" id="btn_order_go3" href="#" onclick="form_submit();return false;">주문하기</a>
+            <div class="loading_box" id="buyProgessbar">
+                <div class="progessbar"></div>
+                <span>결제 진행 중</span>
+            </div>
+            <a id="resettle" class="btn_order_go3" href="#" onclick="form_submit();return false;">다시결제하기</a>
+        </div>	
+    </section>
+</section>
+<!-- // pdf 10p ~ 11p -->
+<!-- // fine.html -->
+
+<!-- order.html -->
+<!-- pdf 12p 1st -->
+<style>
+    .address_txt p {white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+</style>
+<div class="dis_address_info">
+    <p id="disDeliname">다중배송</p>
+</div>
+<div class="address_txt"> 
+    <p><span class="stit">배송지</span><em>1. 서울집 | 경기 하남시 덕풍동 1234-4 34</em></p>
+    <p><span class="stit">배송지</span><em>2. 부산집 | 경기 하남시 덕풍동 1234-4 34</em></p>
+</div>
+<a class="open_payment_set1">2개의 배송지로 배송됩니다</a>
+<!-- // pdf 12p 1st -->
+
+<!-- pdf 12p 2nd -->
+<div class="row_con test_rowcon open_payment_set5">
+    <div class="tit">배송시기</div>
+    <a class="open_payment_set" id="disp_deliway">예약배송/택배</a>
+</div>
+<div class="row_con test_rowcon open_payment_set10 dawnInfo_title">
+    <span id="dawnSpan">예약된 배송일 도착 예정</span> 
+    <span class="dawnEtc">공휴일제외</span>
+</div>
+<!-- // pdf 12p 2nd -->
+<!-- // order.html -->
+
+
+<!-- order_end.html -->
+<!-- pdf 14p 1st -->
+<h4>수령인 정보 1</h4>
+<table summary="수령인 정보">
+    <tbody>
+    <tr>
+        <th>수령인</th>
+        <td>홍길동</td>
+    </tr>
+    <tr>
+        <th>휴대전화</th>
+        <td>010-7778-4175</td>
+    </tr>
+    <tr>
+        <th>배송주소</th>
+        <td>경기 하남시 덕풍동 1234-4 34</td>
+    </tr>
+    <tr>
+        <th>배송메시지</th>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<h4>수령인 정보 2</h4>
+<table summary="수령인 정보">
+    <tbody>
+    <tr>
+        <th>수령인</th>
+        <td>홍길동</td>
+    </tr>
+    <tr>
+        <th>휴대전화</th>
+        <td>010-7778-4175</td>
+    </tr>
+    <tr>
+        <th>배송주소</th>
+        <td>경기 하남시 덕풍동 1234-4 34</td>
+    </tr>
+    <tr>
+        <th>배송메시지</th>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<!-- // pdf 14p 1st -->
+<!-- // order_end.html -->
+
+
+<!-- mp_order_view.html -->
+<!-- pdf 15p 1st -->
+<h4>수령인 정보 1</h4>
+<table summary="수령인 정보">
+    <tbody>
+    <tr>
+        <th>수령인</th>
+        <td>홍길동</td>
+    </tr>
+    <tr>
+        <th>휴대전화</th>
+        <td>010-7778-4175</td>
+    </tr>
+    <tr>
+        <th>배송주소</th>
+        <td>
+            [06127] 서울 강남구 봉은사로 16길 33 <br>
+            [06127] 서울 강남구 봉은사로 16길 33
+        </td>
+    </tr>
+    <tr>
+        <th>배송시기</th>
+        <td>예약배송</td>
+    </tr>
+    <tr>
+        <th>배송메시지</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>상품명</th>
+        <td>밀크티키트 세트 외 2건</td>
+    </tr>
+    <tr>
+        <th>송장번호</th>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<h4>수령인 정보 2</h4>
+<table summary="수령인 정보">
+    <tbody>
+    <tr>
+        <th>수령인</th>
+        <td>홍길동</td>
+    </tr>
+    <tr>
+        <th>휴대전화</th>
+        <td>010-7778-4175</td>
+    </tr>
+    <tr>
+        <th>배송주소</th>
+        <td>
+            [06127] 서울 강남구 봉은사로 16길 33 <br>
+            [06127] 서울 강남구 봉은사로 16길 33
+        </td>
+    </tr>
+    <tr>
+        <th>배송시기</th>
+        <td>예약배송</td>
+    </tr>
+    <tr>
+        <th>배송메시지</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th>상품명</th>
+        <td>밀크티키트 세트 외 2건</td>
+    </tr>
+    <tr>
+        <th>송장번호</th>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+<!-- // pdf 15p 1st -->
+
+<!-- // pdf 16p 2nd -->
+<h4>예약 배송 정보</h4>
+<table summary="예약 배송 정보">
+    <tbody>
+    <tr>
+        <th>배송일</th>
+        <td>2020.01.14 (화)</td>
+    </tr>
+    </tbody>
+</table>
+<p class="caption">부득이하게 배송일 수정을 원하실 경우 반드시 선택하신 배송일 로부터 2일 전까지 카카오톡 또는 전화로 연락주시기 바랍니다.</p>
+<!-- // pdf 16p 2nd -->
+<!-- // mp_order_view.html -->
