@@ -119,8 +119,10 @@
 
 <!-- fine.html -->
 <!-- pdf 10p ~ 11p -->
+<div class="fine_popup">
 <div class="dim"></div>
 <style>
+.fine_popup {display: none;}
 .dim {background-color: #000; width: 100%; height: 100vh; position: fixed; left: 0; top: 0; z-index: 1000; opacity: 0.5; }
 .order_section2 .mt30 {margin-top: 30px;}
 .order_section2 .mw100 {max-width: 100% !important;}
@@ -356,6 +358,15 @@
         </div>	
     </section>
 </section>
+</div>
+<script>
+	$('.open_payment_set1').click(function (){
+		$('.fine_popup').show();
+	});
+	$('.fine_popup .btn_close').click(function (){
+		$('.fine_popup').hide();
+	});
+</script>
 <!-- // pdf 10p ~ 11p -->
 <!-- // fine.html -->
 
