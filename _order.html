@@ -367,6 +367,21 @@
 		$('.fine_popup').hide();
 	});
 </script>
+
+<!-- 우편번호 새창 팝업 관련 -->
+<script>
+function postsearch() {
+    new daum.Postcode({
+        oncomplete: function(data) {
+// 기존 코드 유지
+        },
+        autoMapping:false,
+        width : '422px', // 새창 팝업 가로 사이즈
+        height : '518px' // 새창 팝업 세로 사이즈
+    }).open();
+}
+</script>
+<!-- // 우편번호 새창 팝업 관련 -->
 <!-- // pdf 10p ~ 11p -->
 <!-- // fine.html -->
 
