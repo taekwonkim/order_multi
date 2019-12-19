@@ -175,10 +175,12 @@
 .order_section2 .order_deli_table div:nth-of-type(2) {width: 90px;}
 .order_section2 .order_deli_table div:nth-of-type(3) {width: 90px;}
 .order_section2 .order_deli_table div:nth-of-type(4) {width: 180px;}
-.order_section2 .order_deli_table div:nth-of-type(5) {width: 180px;}
+.order_section2 .order_deli_table div:nth-of-type(5) {width: 254px;}
 .order_section2 .order_deli_table div:nth-of-type(6) {width: 74px;}
-.order_section2 .order_deli_table div:nth-of-type(7) {width: 74px;}
-.order_section2 .order_deli_table div:nth-of-type(8) {width: 120px;}
+.order_section2 .order_deli_table div:nth-of-type(7) {width: 120px;}
+.order_section2 .order_deli_table .prd_nameNcount p {display: flex;}
+.order_section2 .order_deli_table .prd_nameNcount .prd_name {width: 176px;}
+.order_section2 .order_deli_table .prd_nameNcount .prd_count {width: 72px;}
 .order_section2 .order_deli_table .btn {width: 53px; height: 28px; border-radius: 4px; border: solid 1px #dddddd; display: inline-block; line-height: 28px; cursor: pointer;}
 .order_section2 .pay_btn_box .btn_box {position: relative; text-align: center; height: 48px; margin-top: 22px;}
 .order_section2 .pay_btn_box #resettle { display: none; }
@@ -327,8 +329,9 @@
                 <div>받으시는 분</div>
                 <div>연락처</div>
                 <div>주소</div>
-                <div>상품명</div>
-                <div>수량</div>
+                <div class="prd_nameNcount">
+                    <p><span class="prd_name">상품명</span><span class="prd_count">수량</span></p>
+                </div>
                 <div>배송비</div>
                 <div>비고</div>
             </div>
@@ -344,71 +347,8 @@
                         <p>[06127] 서울 강남구 봉은사로16길 33, 헬로네이처 3층</p>
                         <p>서울 강남구 역삼동 614-4 헬로네이처 3층</p>
                     </div>
-                    <div>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                    </div>
-                    <div>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                        <p>1</p>
-                    </div>
-                    <div>2,500</div>
-                    <div>
-                        <span id="" class="btn btnS2 btnYell2" onclick="multiDeliFunc('P0','','','find');">수정</span>
-                        <span id="" class="btn btnS2 btnGre2" onclick="multiDeliFunc('P0','','','delete');">삭제</span>
-                    </div>
-                </div>
-                <div class="order_deli_table">
-                    <div>2020.01.14</div>
-                    <div>홍길동</div>
-                    <div>
-                        <p>010-000-0000</p>
-                        <p>010-000-0000</p>
-                    </div>
-                    <div class="tal">
-                        <p>[06127] 서울 강남구 봉은사로16길 33, 헬로네이처 3층</p>
-                        <p>서울 강남구 역삼동 614-4 헬로네이처 3층</p>
-                    </div>
-                    <div>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                    </div>
-                    <div>
-                        <p>1</p>
-                    </div>
-                    <div>2,500</div>
-                    <div>
-                        <span id="" class="btn btnS2 btnYell2" onclick="multiDeliFunc('P0','','','find');">수정</span>
-                        <span id="" class="btn btnS2 btnGre2" onclick="multiDeliFunc('P0','','','delete');">삭제</span>
-                    </div>
-                </div>
-                <div class="order_deli_table">
-                    <div>2020.01.14</div>
-                    <div>홍길동</div>
-                    <div>
-                        <p>010-000-0000</p>
-                        <p>010-000-0000</p>
-                    </div>
-                    <div class="tal">
-                        <p>[06127] 서울 강남구 봉은사로16길 33, 헬로네이처 3층</p>
-                        <p>서울 강남구 역삼동 614-4 헬로네이처 3층</p>
-                    </div>
-                    <div>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                        <p>상황양지버섯 혼합 선물세트</p>
-                    </div>
-                    <div>
-                        <p>1</p>
-                        <p>1</p>
+                    <div class="prd_nameNcount">
+                        <p><span class="prd_name">상황양지버섯 혼합 선물세트</span><span class="prd_count">1</span></p>
                     </div>
                     <div>2,500</div>
                     <div>
