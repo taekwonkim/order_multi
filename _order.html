@@ -238,11 +238,10 @@
                         <input type="hidden" name="phoneReceiver[]" id="phoneReceiver3" value="">
                     </div>
                 </div>
-                <div class="area_input03 input_add">
+                <div class="area_input02 input_add">
                     <p>주소</p>
                     <div class="area_input">
-                        <input type="text" name="rc_zipcode[]" id="rc_zipcode0" readonly="" value=""><input type="hidden" name="zipcode[]" id="zipcode0" value="">
-                        <input type="text" name="rc_zipcode[]" id="rc_zipcode1" readonly="" value=""><input type="hidden" name="zipcode[]" id="zipcode1" value="">
+                        <input type="text" readonly="" value="">
                         <a class="btn_search_address btn_set_settle" href="javascript:postsearch();">우편번호 찾기</a>
                         <input type="text" class="mw100" name="rc_address" id="rc_address" readonly="" value="">
                         <input type="hidden" name="address" id="address" value="">
@@ -376,8 +375,9 @@
 <script>
 	$('.open_payment_set1').click(function (){
 		$('.fine_popup').show();
+		$(window).scrollTop(0);
 	});
-	$('.fine_popup .btn_close').click(function (){
+	$('.fine_popup .btn_close, .fine_popup .dim').click(function (){
 		$('.fine_popup').hide();
 	});
 </script>
@@ -424,6 +424,50 @@ function postsearch() {
     <span class="dawnEtc">공휴일제외</span>
 </div>
 <!-- // pdf 12p 2nd -->
+
+<!-- 개인정보 수집 및 이용동의 영역 -->
+<div class="src-components-agreement__container___qpTuQ" style="display: block;">
+    <section class="src-components-agreement__terms_wrap___MUHBo" style="overflow: hidden;">
+        <div class="terms_header">
+            <div class="src-components-agreement__title___n3DiV close">개인정보 수집 및 이용동의</div>
+        </div>
+        <div class="terms_description">
+            <div class="src-components-agreement__terms_description___1dm70" style="border: 0px none; display: none;">
+                <div>
+                    <p>고객님께서는 아래 내용에 대하여 동의를 거부하실 수 있으며, 거부 시 상품배송, 구매 및 결제, 일부 포인트 적립이 제한됩니다.</p>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>수집·이용목적</th>
+                                <td>대금 결제/환불 서비스 제공, 주문/배송/거래 내역 조회 서비스 제공, 전자상거래법 준수 등</td>
+                            </tr>
+                            <tr>
+                                <th>수집항목</th>
+                                <td>신용카드 정보, 계좌 정보, 주문/배송/거래 내역</td>
+                            </tr>
+                            <tr>
+                                <th>보유기간</th>
+                                <td>회원탈퇴 시 까지. 단, 관계 법령의 규정에 따라 보존할 의무가 있으면 해당 기간 동안 보존 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>이용계약(이용약관)이 존속중인 탈퇴하지 않은 회원의 경우 보유기간은 보존의무기간 이상 보관할 수 있으며 이 기간이 경과된 기록에 대해서 파기요청이 있는 경우 파기함</p>
+                    <p>결제수단에 따른 개인정보 수집 및 이용 항목이 상이할 수 있음</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="src-components-agreement__terms_agree___2gGCA" style="text-align:center;">
+        <p>위 내용을 확인하였으며 결제에 동의 합니다.</p>
+    </section>
+</div>
+<script>
+$(".src-components-agreement__title___n3DiV").click(function (){
+    $(this).toggleClass("open");
+    $('.src-components-agreement__terms_description___1dm70').slideToggle(300);
+});
+</script>
+<!-- // 개인정보 수집 및 이용동의 영역 -->
 <!-- // order.html -->
 
 
