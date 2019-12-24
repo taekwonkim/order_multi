@@ -462,9 +462,16 @@ function postsearch() {
     </section>
 </div>
 <script>
-$(".src-components-agreement__title___n3DiV").click(function (){
-    $(this).toggleClass("open");
-    $('.src-components-agreement__terms_description___1dm70').slideToggle(300);
+$(".src-components-agreement__title___n3DiV").click(function(){
+	if ($(this).hasClass('close')){
+		$(".src-components-agreement__title___n3DiV").removeClass("open").addClass("close");
+		$(this).removeClass("close").addClass("open");
+		$('.src-components-agreement__terms_description___1dm70').slideUp(300);
+		$(this).parent().parent().find(".src-components-agreement__terms_description___1dm70").slideDown(300);
+	} else {
+		$(this).removeClass("open").addClass("close");
+		$('.src-components-agreement__terms_description___1dm70').slideUp(300);
+	}
 });
 </script>
 <!-- // 개인정보 수집 및 이용동의 영역 -->
