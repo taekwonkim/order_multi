@@ -615,3 +615,27 @@ $(".src-components-agreement__title___n3DiV").click(function(){
 <p class="caption">부득이하게 배송일 수정을 원하실 경우 반드시 선택하신 배송일 로부터 2일 전까지 카카오톡 또는 전화로 연락주시기 바랍니다.</p>
 <!-- // pdf 16p 2nd -->
 <!-- // mp_order_view.html -->
+
+<!-- order_multi.html -->
+<!-- 주문목록 정보 관련 -->
+<style>
+    .right_wrap .cart_list_popup.layer_window .ord_end_list_wrap .cart_item {border: 0px none; border-top: 1px solid #d9d9d9; background: none;}
+    .right_wrap .cart_list_popup.layer_window .ord_end_list_wrap .cart_item:first-child {border-top: 0px none;}
+</style>
+<!-- // 주문목록 정보 관련 -->
+
+<!-- 결제수단 관련 -->
+<script>
+$('.payment_article .rd_label').click(function(){
+	let paymentChk = $('input[name="settlekind"]:checked').val();
+	if(paymentChk == 'a'){
+		$('.open_payment_set11').show();
+        $('.open_payment_set7').css("border-radius","0"); // 무통장입금 미 선택시
+	}else{
+		$('.open_payment_set11').hide();
+        $('.open_payment_set7').css("border-radius","0 0 10px 10px"); // 무통장입금 선택시
+	}
+});
+</script>
+<!-- // 결제수단 관련 -->
+<!-- // order_multi.html -->
